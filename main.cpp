@@ -38,10 +38,11 @@ void MakeJosephusPermutation(RandomIt first, RandomIt last, uint32_t step_size) 
 }*/
 template <typename RandomIt>
 void MakeJosephusPermutation(RandomIt first, RandomIt last, uint32_t step_size) {
-    deque<typename RandomIt::value_type> pool; //(first, last);
-    for(auto it = first; it != last; ++it) {
+    //deque<typename RandomIt::value_type> pool; //(first, last);
+    /*for(auto it = first; it != last; ++it) {
         pool.push_back(move(*it));
-    }
+    }*/
+    deque<typename RandomIt::value_type> pool(make_move_iterator(first), make_move_iterator(last));
  
     size_t cur_pos = 0;
     auto it = first;
